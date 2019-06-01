@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="vue-app">
+			<input type="button" @click="a++" id="" value="Age To A" />
+			<input type="button"  @click="b++" id="" value="Age To B" />
+			<p>
+			A--{{a}}	
+			</p>
+			<p>
+			B--{{b}}
+			</p>
+			Age+A={{loga}}
+			<br>
+			Age+B={{logb}}
+		</div>
+		
+		<script type="text/javascript">
+			
+			new Vue({
+				el:"#vue-app",
+				data:{
+					a:0,
+					b:0,
+					age:30
+				},
+				
+				methods:{
+//					loga:function()
+//					{
+//						console.log("to A");
+//					 return	this.age+this.a;
+//					},
+//					logb:function()
+//					{
+//						console.log("to B");
+//						return this.age+this.b;
+//						
+//					}
+			},
+			 computed:{
+			 	loga:function()
+					{
+						console.log("to A");
+					 return	this.age+this.a;
+					},
+					logb:function()
+					{
+						console.log("to B");
+						return this.age+this.b;
+						
+					}
+			 }
+			})
+		</script>
+				
+	</body>
+</html>

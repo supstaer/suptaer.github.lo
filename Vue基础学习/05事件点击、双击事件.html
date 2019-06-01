@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+		<style type="text/css">
+			#canves{
+				widows: 600px;
+				padding: 200px 20px;
+				text-align: center;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="vue-app">
+			<button @click="add(10)" value="">加十岁</button>
+			<button @click="subtract(10)" value="">减十岁</button>
+			<p> my age is {{age}}</p>
+			
+			<div id="canves" @mousemove="updateXY">
+				{{x}}
+				{{y}}
+				
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			new Vue({
+				el:"#vue-app",
+				data:{
+					age:10,
+					x:0,
+					y:0
+				},
+				methods:{
+					add:function(ages)
+					{
+						this.age+=ages;
+					},
+					subtract:function(ages)
+					{
+						this.age-=ages;
+					},
+					updateXY:function(event){
+//						console.log(event)
+                         this.x=event.offsetX;
+                         this.y=event.offsetY;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

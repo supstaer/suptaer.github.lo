@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+		<style type="text/css">
+			span{
+				background-color:red;
+				display: inline-block;
+				padding: 10px;
+				color: #fff;
+				margin: 10px;
+			}
+			
+			.changeColor span{
+				background-color: green;
+				
+			}
+			.changeLength span:after{
+				content: "length";
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="vue-app">
+			<h1>绑定Css样式</h1>
+			<h2>示例一</h2>
+			<!--<div @click="changeColor=!changeColor" v-bind:class="{changeColor:changeColor}">
+		  <span>WsCookie</span>
+			</div>-->
+			<h1>实例二</h1>
+			<button v-on:click="changeColor=!changeColor">changecolor</button>
+			<button v-on:click="changeLength=!changeLength">changeLength</button>
+			<div v-bind:class="computedClass">
+				<span>WsCookie</span>
+				
+			</div>
+			
+		</div>
+		<script>
+			new Vue({
+				el:"#vue-app",
+				data:{
+					changeColor:false,
+					changeLength:false
+				     },
+				     
+				     methods:{
+				     	
+				     },
+				     
+				     computed:{
+				     computedClass:function()
+				     {
+				     	return{
+				     	changeColor:this.changeColor,
+				     	changeLength:this.changeLength
+				     	}
+				     }
+				     }
+			})
+		</script>
+	</body>
+</html>

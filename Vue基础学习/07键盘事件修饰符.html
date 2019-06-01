@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="vue-app">
+			<h1>键盘修饰符</h1>
+			name:<input type="text" id="" value="" @keyup.enter="enteron" />
+		</div>
+		
+		<script type="text/javascript">
+			new Vue({
+				el:"#vue-app",
+				data:{
+					
+				},
+				methods:{
+					enteron:function(){
+						console.log("键盘正在输入");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

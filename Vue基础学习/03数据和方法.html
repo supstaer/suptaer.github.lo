@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="vue-app">
+			<h1>{{groutt('好看')}}</h1>
+			<h1>{{name}}</h1>
+			<p>{{Job}}</p>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:"#vue-app",
+				data:{name:"Supstaer",
+				      Job:"程序员",
+				      webhttp:"http://www.baidu.com",
+				      webhttpTeg:"<a href='http://www.baidu.com'> 百度一下</a>"
+			},
+			methods:{
+				groutt:function(face)
+				{
+					return "我为什么这么"+face
+				}
+			}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style type="text/css">
+			#bag{
+				width: 200px;
+				height: 500px;
+				margin: 0 auto;
+				background: url(img/bag.png) center no-repeat;
+				background-size:80%;
+			}
+			
+			#bag.burst{
+				width: 200px;
+				height: 500px;
+				margin: 0 auto;
+				background:url(img/bag-burst.png) center no-repeat;
+				background-size:80%;
+			}
+			
+			#bag-healt{
+				width: 200px;
+			    border: 2px solid #000;
+			    margin: 0 auto 20px auto;
+			}
+			
+			#bag-healt div{
+				height: 20px;
+				background: crimson;
+			}
+			#controls{
+				width: 200px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="vue-app">
+			<!--图片-->
+			
+			<div id="bag" v-bind:class="{burst:ended}">
+				
+			</div>
+			<!--进度情况-->
+			<div id="bag-healt">
+				<div v-bind:style="{width:helsth+'%'}">
+					
+				</div>
+			</div>
+			
+			<!--控制按钮-->
+			<div id="controls">
+				<button @click="pushe" v-show="!ended">使劲敲</button>
+				<button @click="resturt">重新开始</button>
+			</div>
+			
+		</div>
+		<script>
+			new Vue({
+				el:"#vue-app",
+				data:{
+					helsth:100,
+					ended:false,
+					burst:false
+				},
+				methods:{
+					pushe:function()
+					{
+						this.helsth-=10;
+						if(this.helsth<=0)
+						{
+							this.ended=true;
+						}
+					},
+					resturt:function()
+					{
+						this.helsth=100;
+						this.ended=false
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

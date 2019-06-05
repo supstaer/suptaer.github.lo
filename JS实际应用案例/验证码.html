@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function Rmode()
+			{
+				  var x=parseInt(Math.random()*10000)%(9999-1000+1)+1000;
+				  var a=document.getElementById("change").innerHTML=x;
+			}
+			
+			function check(x)
+			{
+				var num= document.getElementById("app").value;
+				if(x!=num)
+				{
+					alert("验证码错误");
+				}
+				else
+				{
+					alert("Yes");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="myform">
+		验证码：<input type="text" id="app" />
+		<td id="change">
+		  <script type="text/ecmascript">
+			var x=parseInt(Math.random()*10000)%(9999-1000+1)+1000;
+			document.write(x);
+		</script>
+		</td>
+		<input type="submit" value="换一张" onclick="Rmode()"/>
+		
+		<br>
+		<input type="button" value="确认" onclick="check(x)"/>
+		</form>
+	</body>
+</html>

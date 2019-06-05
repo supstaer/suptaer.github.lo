@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			var num=1;
+			var header=new Array("hood","kwoer","Heil","Labve","Kevi","Uide","Core","Hade","Amount","Amanj","Jquver","kuli","Tom","Jack","Rose","Centy","Bom","Heok","Jdak","Deed");
+			var times;
+			
+			function StartDo()
+			{
+				for(var i=1;i<=20;i++){
+				document.getElementById("check"+i).innerHTML=header[i-1];
+				if(i==num)
+				document.getElementById("check"+i).style="background-color:red";
+				else
+				document.getElementById("check"+i).style="background-color:#fff";
+				}
+				num++;
+				if(num>21)
+				num=1;
+				times=setTimeout("StartDo()",1)
+			}
+			
+			function StopDo()
+			{
+				clearTimeout(times);
+				alert("恭喜"+header[num-2]+"中奖了")
+			}
+		</script>
+		
+		<style type="text/css">
+			#red{
+				width: 800px;
+				height: 2000px;
+				margin: auto;
+			}
+			.pass{
+				width: 100px;
+				height: 100px;
+				margin: 20px;
+				border: 1px solid black;
+				float: left;
+				line-height: 100px;
+				text-align: center;
+				background-color: ;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="开始"  onclick="StartDo()"/>
+		<input type="button" name="" id="" value="停止"  onclick="StopDo()"/>
+		<div id="red">
+			<div id="check1" class="pass"></div>
+			<div id="check2" class="pass"></div>
+			<div id="check3" class="pass"></div>
+			<div id="check4" class="pass"></div>
+			<div id="check5" class="pass"></div>
+			<div id="check6" class="pass"></div>
+			<div id="check7" class="pass"></div>
+			<div id="check8" class="pass"></div>
+			<div id="check9" class="pass"></div>
+			<div id="check10" class="pass"></div>
+			<div id="check11" class="pass"></div>
+			<div id="check12" class="pass"></div>
+			<div id="check13" class="pass"></div>
+			<div id="check14" class="pass"></div>
+			<div id="check15" class="pass"></div>
+			<div id="check16" class="pass"></div>
+			<div id="check17" class="pass"></div>
+			<div id="check18" class="pass"></div>
+			<div id="check19" class="pass"></div>
+			<div id="check20" class="pass"></div>
+			
+		</div>
+	</body>
+</html>

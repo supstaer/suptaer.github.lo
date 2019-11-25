@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<cpn @btnclick="gbqclick"></cpn>
+		</div>
+		<template id="cpn">
+			<div>
+				<button v-for="item in categorcas" @click="Itemclick(item)">{{item.name}}</button>
+			</div>
+		</template>
+		<script>
+			const cpn={
+				template:"#cpn",
+				data()
+				{
+					return{
+						categorcas:[
+							{id:"aaa",name:"热门推荐"},
+							{id:"bbb",name:"手机热卖"},
+							{id:"ccc",name:"家用家电"},
+							{id:"ddd",name:"电脑办公"}
+						]
+					}
+				},
+				methods:{
+					Itemclick(item)
+					{
+						this.$emit('btnclick',item)
+					}
+				}
+				
+				
+			}
+			
+			const app=new Vue({
+				el:"#app",
+				data:{},
+				components:{
+					cpn
+				},
+				methods:{
+					gbqclick(item)
+					{
+						console.log("gbqclick",item)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

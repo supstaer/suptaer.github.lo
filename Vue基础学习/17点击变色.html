@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.active{
+				color: red;
+			}
+		</style>
+		  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			 <ul>
+			 	<li v-for="(item,index) in moveis"
+				 :class="{active:currindex===index}"
+				 @click="liClick(index)">
+					{{item}}
+				</li>
+			 </ul>
+		</div>
+		<script>
+			const app=new Vue({
+				el:"#app",
+				data:{
+					moveis:["詹姆斯","杜兰特","库里","哈登"],
+					currindex:0
+				},
+				methods:{
+					liClick(index)
+					{
+						this.currindex=index;
+					}
+				}
+				
+			})
+		</script>
+	</body>
+</html>

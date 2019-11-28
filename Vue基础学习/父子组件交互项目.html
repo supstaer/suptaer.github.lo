@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<cpn :cnum1="num1" 
+			     :cnum2="num2"
+				 @inpuechange="inpucge"
+				 @inpuechange2="inpucge2"></cpn>
+		</div>
+		<template id="cpn">
+			<div>
+				<h2>props:{{cnum1}}</h2>
+				<h2>data:{{ame1}}</h2>
+				<input type="text" :value="ame1" @input="inputvalue1"/>
+				<h2>props:{{cnum2}}</h2>
+				<h2>data:{{ame2}}</h2>
+				<input type="text" :value="ame2" @input="inputvalue2"/>
+			</div>
+			
+		</template>
+		<script>
+			
+		const app=new Vue({
+			el:"#app",
+			data:{
+				num1:0,
+				num2:1
+			},
+			methods:{
+			      inpucge(value)
+					  {
+						  this.num1=parseInt(value);
+					  },
+					    
+				 inpucge2(value)
+					  {
+						  this.num2=parseInt(value) ;
+					  }
+			},
+			components:{
+				cpn:{
+					template:"#cpn",
+					props:{
+						cnum1:Number,
+						cnum2:Number
+					},
+					data(){
+						return{
+							ame1:this.cnum1,
+							ame2:this.cnum2
+						}
+					},
+					methods:{
+						inputvalue1()
+						{
+							this.ame1=event.target.value;
+							this.$emit("inpuechange",this.ame1)
+						},
+						inputvalue2()
+						{
+							this.ame2=event.target.value;
+							this.$emit("inpuechange2",this.ame2)
+						}
+					}
+				},
+				
+			}
+		})	
+	    </script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			 <span 
+			  v-for="item in count"
+			   class="star1" 
+			  :class="item<=tempscore? 'star2':'star1'" 
+			  @mouseenter="tempscore=item" 
+			  @mouseleave="tempscore=score" 
+			  @click="score=item" :key="item.id" style="font-size:20px"></span>
+		</div>
+		<script>
+			const app=new Vue({
+				el:"#app",
+				data:{
+					count:[1,2,3,4,5],
+					score:0,
+					tempscore:0
+				}
+			})		
+		</script>
+		<style>
+			.star1:after{
+				content: '☆';
+			}
+			
+			.star2:after{
+				content: '★';
+			}
+			
+			
+		</style>
+	</body>
+</html>
